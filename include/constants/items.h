@@ -172,7 +172,7 @@ enum __attribute__((packed)) Item
     ITEM_X_SP_DEF = 124,
     ITEM_X_SPEED = 125,
     ITEM_X_ACCURACY = 126,
-
+x
     ITEM_DIRE_HIT = 127,
     ITEM_GUARD_SPEC = 128,
 
@@ -268,6 +268,7 @@ enum __attribute__((packed)) Item
     ITEM_DYNITE_ORE = 198,
 
     // Mail
+    // TODO: find out how to replace Gen III mail by Gen IV mail
     FIRST_MAIL_INDEX = 199,
     ITEM_ORANGE_MAIL = FIRST_MAIL_INDEX,
     ITEM_HARBOR_MAIL = 200,
@@ -640,6 +641,7 @@ enum __attribute__((packed)) Item
     ITEM_UTILITY_UMBRELLA = 513,
 
     // Berries
+    // TODO: find out how to add a new berry (Apple)
     FIRST_BERRY_INDEX = 514,
     ITEM_CHERI_BERRY = FIRST_BERRY_INDEX,
     ITEM_CHESTO_BERRY = 515,
@@ -1051,6 +1053,50 @@ enum __attribute__((packed)) Item
     ITEM_BAXCALIBRITE = 871,
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
+
+    // GOLD & SILVER 97 ITEMS
+
+    // Status condition-preventing Held Items
+    ITEM_WATER_TAIL = 874,
+    ITEM_FIRE_TAIL = 875,
+    ITEM_THUNDER_TAIL = 876,
+    ITEM_EARTHEN_CLAY = 877,
+    ITEM_SNAKESKIN = 878,
+    ITEM_PRETTY_TAIL = 879,
+    ITEM_STIMULUS_ORB = 880,
+    ITEM_CONFUSE_CLAW = 881,
+    ITEM_CALM_SEED = 882,
+
+    // Stat-boosting consumable Held Items
+    ITEM_SHARP_HORNS = 883
+    ITEM_STEEL_SHELL = 884
+    ITEM_WISDOM_ORB = 885,
+    ITEM_ENERGY_WALL = 886
+    ITEM_POWER_WINGS = 887
+    ITEM_FOCUS_ORB = 888,
+    ITEM_DETECT_ORB = 889,
+
+    // Catch Rate-boosting Held Items
+    ITEM_LONG_TONGUE = 890,
+    ITEM_LONG_VINE = 891,
+
+    // Evolution Items
+    ITEM_HEART_STONE = 892,
+    ITEM_POISON_STONE = 893,
+
+    // Key Items
+    ITEM_BATTLE_PASS = 894,
+    ITEM_BLUE_CARD = 895,
+    ITEM_DRAGON_ORB = 896,
+    ITEM_FUEL_LINE = 897,
+    ITEM_SHIP_KEY = 898,
+    ITEM_SKATEBOARD = 899,
+    ITEM_SLOWPOKE_TAIL = 900,
+    ITEM_SLOWPOKETAIL = ITEM_SLOWPOKE_TAIL, // Pre-Gen VI name
+    ITEM_SQUIRT_BOTTLE = 901,
+    ITEM_SQUIRTBOTTLE = ITEM_SQUIRT_BOTTLE, // Pre-Gen VI name
+    ITEM_ROOM_PASS = 902,
+    ITEM_TRI_WING = 903,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
