@@ -54,6 +54,7 @@
 #include "constants/weather.h"
 #include "constants/pokemon.h"
 #include "test/battle.h"
+#include "money.h"
 
 static bool32 TryRemoveScreens(enum BattlerId battler);
 static bool32 IsUnnerveAbilityOnOpposingSide(enum BattlerId battler);
@@ -75,6 +76,7 @@ ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12_Floored(u32 percent);
 extern const u8 *const gBattlescriptsForRunningByItem[];
 extern const u8 *const gBattlescriptsForUsingItem[];
 extern const u8 *const gBattlescriptsForSafariActions[];
+
 
 enum BattlerId GetBattlerAtPosition(enum BattlerPosition position)
 {
@@ -6300,6 +6302,19 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         break;
     case EFFECT_STORED_POWER:
         basePower += (CountBattlerStatIncreases(battlerAtk, TRUE) * 20);
+        break;
+    case EFFECT_COIN_HURL:
+        // Only grant bonus power to the player in single-player battles
+        if (IsOnPlayerSide(ctx->battlerAtk) && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+        {
+            u32 money = GetMoney(&gSaveBlock1Ptr->money);
+            u32 tiers = money / 1000;
+
+            if (tiers > 12)
+                tiers = 12;
+
+            basePower += tiers * 5;
+        }
         break;
     case EFFECT_ELECTRO_BALL:
         speed = GetBattlerTotalSpeedStat(battlerAtk, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk]) / GetBattlerTotalSpeedStat(battlerDef, ctx->abilities[battlerDef], ctx->holdEffects[battlerDef]);

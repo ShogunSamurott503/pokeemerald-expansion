@@ -21987,6 +21987,91 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Gold & Silver 97 Reforged Moves
+    [MOVE_CROSS_CUTTER] =
+    {
+        .name = COMPOUND_STRING("Cross Cutter"),
+        .description = COMPOUND_STRING(
+            "Slashes with claws, etc. Has\n"
+            "a high critical-hit ratio."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
+        .pp = 25,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .battleAnimScript = gBattleAnimMove_CrossCutter,
+    },
+
+    [MOVE_COIN_HURL] =
+    {
+        .name = COMPOUND_STRING("Coin Hurl"),
+        .description = COMPOUND_STRING(
+            "Throws coins. Stronger the\n"
+            "more money the trainer has."),
+        .effect = EFFECT_COIN_HURL,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        // TODO: implement move effect
+        .battleAnimScript = gBattleAnimMove_CoinHurl,
+    },
+
+    [MOVE_MEGAPHONE] =
+    {
+        .name = COMPOUND_STRING("Megaphone"),
+        .description = COMPOUND_STRING(
+            "Makes a loud noise that\n"
+            "lowers the foe's Sp. Atk."),
+        .effect = EFFECT_STAT_CHANGE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 40,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .magicCoatAffected = TRUE,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .soundMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = STAT_CHANGE_EFFECT_MINUS,
+            .spAtk = 1,
+        }),
+        .battleAnimScript = gBattleAnimMove_Megaphone, // TODO: add a different battle animation.
+    },
+    [MOVE_ROCK_HEAD] =
+    {
+        .name = COMPOUND_STRING("Rock Head"),
+        .description = COMPOUND_STRING(
+            "Hits with a rock-hard head-\n"
+            "butt. May cause flinching."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 30,
+        }),
+        .battleAnimScript = gBattleAnimMove_RockHead,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

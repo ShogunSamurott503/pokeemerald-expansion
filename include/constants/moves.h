@@ -903,9 +903,13 @@ enum __attribute__((packed)) Move
     MOVE_PSYCHIC_NOISE = 845,
     MOVE_UPPER_HAND = 846,
     MOVE_MALIGNANT_CHAIN = 847,
-    MOVES_COUNT_GEN9,
 
     // Add any custom moves here, not further down!
+    MOVE_CROSS_CUTTER = 848,
+    MOVE_COIN_HURL = 849,
+    MOVE_MEGAPHONE = 850,
+    MOVE_ROCK_HEAD = 851,
+    MOVES_COUNT_GEN9,
 
     MOVES_COUNT = MOVES_COUNT_GEN9,
 
