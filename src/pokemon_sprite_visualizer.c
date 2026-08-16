@@ -1766,13 +1766,17 @@ static void HandleInput_PokemonSpriteVisualizer(u8 taskId)
             gTasks[taskId].func = Exit_PokemonSpriteVisualizer;
             PlaySE(SE_PC_OFF);
         }
-        else if (JOY_NEW(DPAD_DOWN))
+ else if (JOY_NEW(DPAD_DOWN))
         {
             if (TryMoveDigit(&data->modifyArrows, FALSE))
             {
                 data->isFemale = FALSE;
                 PrintDigitChars(data);
                 UpdateBattlerValue(data);
+                
+                // Refresh local species with the newly updated species ID
+                species = IsSpeciesEnabled(data->currentmonId) ? SanitizeSpeciesId(data->currentmonId) : SPECIES_NONE;
+
                 ResetShadowSettings(data);
                 ReloadPokemonSprites(data);
                 data->animIdBack = GetSpeciesBackAnimSet(species) + 1;
@@ -1790,6 +1794,10 @@ static void HandleInput_PokemonSpriteVisualizer(u8 taskId)
                 data->isFemale = FALSE;
                 PrintDigitChars(data);
                 UpdateBattlerValue(data);
+                
+                // Refresh local species with the newly updated species ID
+                species = IsSpeciesEnabled(data->currentmonId) ? SanitizeSpeciesId(data->currentmonId) : SPECIES_NONE;
+
                 ResetShadowSettings(data);
                 ReloadPokemonSprites(data);
                 data->animIdBack = GetSpeciesBackAnimSet(species) + 1;
