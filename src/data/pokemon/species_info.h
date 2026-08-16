@@ -246,6 +246,63 @@ const struct SpeciesInfo gSpeciesInfo[] =
         //.perfectIVCount = NUM_STATS,
     },
     */
+
+    [SPECIES_PETAMOLE] = 
+    {
+        .baseHP        = 62,
+        .baseAttack    = 55,
+        .baseDefense   = 80,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 63,
+        .baseSpDefense = 89,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 141,
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 1, // TODO: maybe change to 0 Defense and 2 SpDefense
+        .itemRare = ITEM_MIRACLE_SEED,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
+        .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LEAF_GUARD },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Petamole"),
+        .cryId = CRY_NONE, // TODO: add cries
+        .natDexNum = NATIONAL_DEX_PETAMOLE,
+        .categoryName = _("Bud"),
+        .height = 12,
+        .weight = 160,
+        .description = COMPOUND_STRING(
+            "A spicy aroma emanates from around its\n"
+            "neck. The aroma acts as a stimulant to\n"
+            "restore health, causing anyone who\n"
+            "smells it to become energetic."),
+        // TODO: implement sprite configuration.
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(QuestionMark)
+        .levelUpLearnset = sPetamoleLevelUpLearnset,
+        .teachableLearnset = sPetamoleTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_MEGANIUM}),
+    },
 };
 
 const struct EggData gEggDatas[EGG_ID_COUNT] =
