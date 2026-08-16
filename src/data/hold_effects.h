@@ -609,4 +609,32 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
         .onSwitchIn = TRUE,
     },
+
+    [HOLD_EFFECT_PREVENT_PAR] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_SLP] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_PSN] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_BRN] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_FRZ] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_CONFUSION] =
+    {
+    },
+
+    [HOLD_EFFECT_PREVENT_STATUS] =
+    {
+    },
 };

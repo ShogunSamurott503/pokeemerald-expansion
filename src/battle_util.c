@@ -5292,6 +5292,7 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
     const u8 *battleScript = NULL;
     u32 sideBattler = 0;
     bool32 abilityAffected = FALSE;
+    u16 holdEffect = GetBattlerHoldEffect(battlerDef);
 
     // Move specific checks
     switch (effect)
@@ -5301,6 +5302,10 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         if (gBattleMons[battlerDef].status1 & (STATUS1_POISON | STATUS1_TOXIC_POISON))
         {
             battleScript = BattleScript_AlreadyPoisoned;
+        }
+        else if (holdEffect == HOLD_EFFECT_PREVENT_PSN)
+        {
+            battleScript = BattleScript_NotAffected;
         }
         else if (abilityAtk != ABILITY_CORROSION && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_POISON, TYPE_STEEL))
         {
@@ -5324,6 +5329,10 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         {
             battleScript = BattleScript_AlreadyParalyzed;
         }
+        else if (holdEffect == HOLD_EFFECT_PREVENT_PAR)
+        {
+            battleScript = BattleScript_NotAffected;
+        }
         else if (GetConfig(B_PARALYZE_ELECTRIC) >= GEN_6 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ELECTRIC))
         {
             battleScript = BattleScript_NotAffected;
@@ -5342,6 +5351,10 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         if (gBattleMons[battlerDef].status1 & STATUS1_BURN)
         {
             battleScript = BattleScript_AlreadyBurned;
+        }
+        else if (holdEffect == HOLD_EFFECT_PREVENT_BRN)
+        {
+            battleScript = BattleScript_NotAffected;
         }
         else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_FIRE))
         {
@@ -5363,6 +5376,10 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         {
             battleScript = BattleScript_AlreadyAsleep;
         }
+        else if (holdEffect == HOLD_EFFECT_PREVENT_SLP)
+        {
+            battleScript = BattleScript_NotAffected;
+        }
         else if (UproarWakeUpCheck(battlerDef))
         {
             battleScript = BattleScript_CantMakeAsleep;
@@ -5371,7 +5388,7 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         {
             battleScript = BattleScript_SleepClauseBlocked;
         }
-        else if (IsElectricTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), gFieldStatuses))
+        else if (IsElectricTerrainAffected(battlerDef, abilityDef, holdEffect, gFieldStatuses))
         {
             battleScript = BattleScript_ElectricTerrainPrevents;
         }
@@ -5394,7 +5411,11 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         {
             battleScript = BattleScript_AlreadyBurned;
         }
-        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) || IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerDef), GetWeather(), B_WEATHER_SUN))
+        else if (holdEffect == HOLD_EFFECT_PREVENT_FRZ)
+        {
+            battleScript = BattleScript_NotAffected;
+        }
+        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) || IsBattlerWeatherAffected(holdEffect, GetWeather(), B_WEATHER_SUN))
         {
             battleScript = BattleScript_NotAffected;
         }
@@ -5412,13 +5433,17 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         return FALSE;
 
     // Checks that apply to all non volatile statuses
-    if (abilityDef == ABILITY_COMATOSE
+    if (holdEffect == HOLD_EFFECT_PREVENT_STATUS)
+    {
+        battleScript = BattleScript_NotAffected;
+    }
+    else if (abilityDef == ABILITY_COMATOSE
      || abilityDef == ABILITY_PURIFYING_SALT)
     {
         abilityAffected = TRUE;
         battleScript = BattleScript_AbilityProtectsDoesntAffect;
     }
-    else if (IsMistyTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), gFieldStatuses))
+    else if (IsMistyTerrainAffected(battlerDef, abilityDef, holdEffect, gFieldStatuses))
     {
         battleScript = BattleScript_MistyTerrainPrevents;
     }
@@ -5502,10 +5527,13 @@ static bool32 CanSleepDueToSleepClause(enum BattlerId battlerAtk, enum BattlerId
 bool32 CanBeConfused(enum BattlerId battlerAtk, enum BattlerId effectBattler)
 {
     enum Ability effectAbility = GetBattlerAbility(effectBattler);
+    u16 holdEffect = GetBattlerHoldEffect(effectBattler);
 
     if (gBattleMons[effectBattler].volatiles.confusionTurns > 0
+     || holdEffect == HOLD_EFFECT_PREVENT_CONFUSION
+     || holdEffect == HOLD_EFFECT_PREVENT_STATUS
      || IsSafeguardProtected(battlerAtk, effectBattler, GetBattlerAbility(battlerAtk))
-     || IsMistyTerrainAffected(effectBattler, effectAbility, GetBattlerHoldEffect(effectBattler), gFieldStatuses)
+     || IsMistyTerrainAffected(effectBattler, effectAbility, holdEffect, gFieldStatuses)
      || IsAbilityAndRecord(effectBattler, effectAbility, ABILITY_OWN_TEMPO))
         return FALSE;
 

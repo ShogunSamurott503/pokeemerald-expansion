@@ -2290,6 +2290,13 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_BOOSTER_ENERGY]   = COMPOUND_STRING("Booster Energy"),
     [HOLD_EFFECT_OGERPON_MASK]     = COMPOUND_STRING("Ogerpon Mask"),
     [HOLD_EFFECT_BERSERK_GENE]     = COMPOUND_STRING("Berserk Gene"),
+    [HOLD_EFFECT_PREVENT_PAR]      = COMPOUND_STRING("Prevent Par"),
+    [HOLD_EFFECT_PREVENT_SLP]      = COMPOUND_STRING("Prevent Slp"),
+    [HOLD_EFFECT_PREVENT_PSN]      = COMPOUND_STRING("Prevent Psn"),
+    [HOLD_EFFECT_PREVENT_BRN]      = COMPOUND_STRING("Prevent Brn"),
+    [HOLD_EFFECT_PREVENT_FRZ]      = COMPOUND_STRING("Prevent Frz"),
+    [HOLD_EFFECT_PREVENT_CONFUSION]= COMPOUND_STRING("Prevent Confusion"),
+    [HOLD_EFFECT_PREVENT_STATUS]   = COMPOUND_STRING("Prevent Status"),
 };
 
 static const u8 *GetHoldEffectName(enum HoldEffect holdEffect)

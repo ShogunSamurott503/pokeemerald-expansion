@@ -15832,6 +15832,231 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_WATER_TAIL] =
+    {
+        .name = ITEM_NAME("Water Tail"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_BRN,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents burns\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_FIRE_TAIL] =
+    {
+        .name = ITEM_NAME("Fire Tail"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_FRZ,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents freezing\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_THUNDER_TAIL] =
+    {
+        .name = ITEM_NAME("Thunder Tail"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_PAR,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents paralysis\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_EARTHEN_CLAY] =
+    {
+        .name = ITEM_NAME("Earthen Clay"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_PAR,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents paralysis\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SNAKESKIN] =
+    {
+        .name = ITEM_NAME("Snakeskin"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_PSN,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents poison\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_PRETTY_TAIL] =
+    {
+        .name = ITEM_NAME("Pretty Tail"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_PSN,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents poison\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_STIMULUS_ORB] =
+    {
+        .name = ITEM_NAME("Stimulus Orb"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_SLP,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents sleep\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_CONFUSE_CLAW] =
+    {
+        .name = ITEM_NAME("Confuse Claw"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_CONFUSION,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents confusion\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_CALM_SEED] =
+    {
+        .name = ITEM_NAME("Calm Seed"),
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_PREVENT_CONFUSION,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "prevents confusion\n"
+            "in battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STATUS_PREVENTION_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    // [ITEM_POISON_STONE] =
+    // {
+    //     .name = ITEM_NAME("Poison Stone"),
+    //     .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
+    //     .description = sEvolutionStoneDesc,
+    //     .pocket = POCKET_ITEMS,
+    //     .sortType = ITEM_TYPE_EVOLUTION_STONE,
+    //     .type = ITEM_USE_PARTY_MENU,
+    //     .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+    //     .effect = gItemEffect_EvoItem,
+    //     .flingPower = 30,
+    //     .iconPic = gItemIcon_QuestionMark,
+    //     .iconPalette = gItemIconPalette_QuestionMark,
+    // },
+
+    // [ITEM_ROOM_PASS] =
+    // {
+    //     .name = ITEM_NAME("Room Pass"),
+    //     .pluralName = ITEM_PLURAL_NAME("Room Passes"),
+    //     .price = 0,
+    //     .description = COMPOUND_STRING(
+    //         "A pass for the \n"
+    //         "Ryukyu Hotel"),
+    //     .importance = 1,
+    //     .pocket = POCKET_KEY_ITEMS,
+    //     .type = ITEM_USE_BAG_MENU,
+    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    //     .iconPic = gItemIcon_QuestionMark,
+    //     .iconPalette = gItemIconPalette_QuestionMark,
+    // },
+
+    // [ITEM_TRI_WING] =
+    // {
+    //     .name = ITEM_NAME("Tri-Wing"),
+    //     .price = 0,
+    //     .description = COMPOUND_STRING(
+    //         "A blue, red, and\n"
+    //         "yellow wing."),
+    //     .importance = 1,
+    //     .pocket = POCKET_KEY_ITEMS,
+    //     .type = ITEM_USE_BAG_MENU,
+    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    //     .iconPic = gItemIcon_QuestionMark,
+    //     .iconPalette = gItemIconPalette_QuestionMark,
+    // },
+
+    // [ITEM_MYSTERY_EGG] =
+    // {
+    //     .name = ITEM_NAME("Mystery Egg"),
+    //     .price = 0,
+    //     .description = COMPOUND_STRING(
+    //         "A mysterious egg\n"
+    //         "obtained from Mr.\n"
+    //         "Pokémon."),
+    //     .importance = 1,
+    //     .pocket = POCKET_KEY_ITEMS,
+    //     .type = ITEM_USE_BAG_MENU,
+    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    //     .iconPic = gItemIcon_QuestionMark,
+    //     .iconPalette = gItemIconPalette_QuestionMark,
+    // },
+
 };
 
 #undef ITEM_NAME

@@ -172,7 +172,7 @@ enum __attribute__((packed)) Item
     ITEM_X_SP_DEF = 124,
     ITEM_X_SPEED = 125,
     ITEM_X_ACCURACY = 126,
-x
+
     ITEM_DIRE_HIT = 127,
     ITEM_GUARD_SPEC = 128,
 
@@ -1068,11 +1068,11 @@ x
     ITEM_CALM_SEED = 882,
 
     // Stat-boosting consumable Held Items
-    ITEM_SHARP_HORNS = 883
-    ITEM_STEEL_SHELL = 884
+    ITEM_SHARP_HORNS = 883,
+    ITEM_STEEL_SHELL = 884,
     ITEM_WISDOM_ORB = 885,
-    ITEM_ENERGY_WALL = 886
-    ITEM_POWER_WINGS = 887
+    ITEM_ENERGY_WALL = 886,
+    ITEM_POWER_WINGS = 887,
     ITEM_FOCUS_ORB = 888,
     ITEM_DETECT_ORB = 889,
 
