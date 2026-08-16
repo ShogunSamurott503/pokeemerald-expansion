@@ -145,6 +145,22 @@ static enum ItemEffect TryBerserkGene(enum BattlerId battler)
     return ITEM_STATS_CHANGE;
 }
 
+static enum ItemEffect TryEntryStatBoost(enum BattlerId battler)
+{
+    enum Stat statId = GetBattlerHoldEffectParam(battler);
+
+    if (CompareStat(battler, statId, MAX_STAT_STAGE, CMP_LESS_THAN, GetBattlerAbility(battler)))
+    {
+        gEffectBattler = gBattleScripting.battler = battler;
+        SetStatChange(battler, statId, 1);
+
+        BattleScriptCall(BattleScript_ConsumableItemStatRaise);
+        return ITEM_STATS_CHANGE;
+    }
+
+    return ITEM_NO_EFFECT;
+}
+
 static enum ItemEffect RestoreWhiteHerbStats(enum BattlerId battler)
 {
     enum ItemEffect effect = ITEM_NO_EFFECT;
@@ -1070,6 +1086,9 @@ enum ItemEffect ItemBattleEffects(enum BattlerId itemBattler, enum BattlerId bat
         break;
     case HOLD_EFFECT_BERSERK_GENE:
         effect = TryBerserkGene(itemBattler);
+        break;
+    case HOLD_EFFECT_ENTRY_STAT_BOOST:
+        effect = TryEntryStatBoost(itemBattler);
         break;
     case HOLD_EFFECT_BOOSTER_ENERGY:
         effect = TryBoosterEnergy(itemBattler, GetBattlerAbility(itemBattler));

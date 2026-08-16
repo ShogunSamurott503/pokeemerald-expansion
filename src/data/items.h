@@ -15995,6 +15995,140 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_QuestionMark,
     },
 
+    [ITEM_SHARP_HORNS] =
+    {
+        .name = ITEM_NAME("Sharp Horns"),
+        .pluralName = ITEM_PLURAL_NAME("Sharp Horns"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_ATK,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Attack in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_STEEL_SHELL] =
+    {
+        .name = ITEM_NAME("Steel Shell"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_DEF,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Defense in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_WISDOM_ORB] =
+    {
+        .name = ITEM_NAME("Wisdom Orb"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_SPATK,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Sp. Atk in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_ENERGY_WALL] =
+    {
+        .name = ITEM_NAME("Energy Wall"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_SPATK,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Sp. Def in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_POWER_WINGS] =
+    {
+        .name = ITEM_NAME("Power Wings"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_SPEED,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Speed in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 20,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_FOCUS_ORB] =
+    {
+        .name = ITEM_NAME("Focus Orb"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_ACC,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Accuracy in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_DETECT_ORB] =
+    {
+        .name = ITEM_NAME("Detect Orb"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_ENTRY_STAT_BOOST,
+        .holdEffectParam = STAT_EVASION,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "raises Evasion in\n"
+            "a battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
     // [ITEM_POISON_STONE] =
     // {
     //     .name = ITEM_NAME("Poison Stone"),

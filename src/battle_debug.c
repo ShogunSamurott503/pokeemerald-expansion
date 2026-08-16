@@ -2297,6 +2297,7 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_PREVENT_FRZ]      = COMPOUND_STRING("Prevent Frz"),
     [HOLD_EFFECT_PREVENT_CONFUSION]= COMPOUND_STRING("Prevent Confusion"),
     [HOLD_EFFECT_PREVENT_STATUS]   = COMPOUND_STRING("Prevent Status"),
+    [HOLD_EFFECT_ENTRY_STAT_BOOST] = COMPOUND_STRING("Entry Stat Boost"),
 };
 
 static const u8 *GetHoldEffectName(enum HoldEffect holdEffect)

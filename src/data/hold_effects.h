@@ -637,4 +637,9 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_PREVENT_STATUS] =
     {
     },
+
+    [HOLD_EFFECT_ENTRY_STAT_BOOST] =
+    {
+        .onSwitchIn = TRUE,
+    },
 };
