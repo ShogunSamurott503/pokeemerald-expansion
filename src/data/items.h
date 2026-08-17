@@ -14310,6 +14310,7 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_DevonScope,
     },
 
+    // TODO: change description according to GS97.
     [ITEM_BASEMENT_KEY] =
     {
         .name = ITEM_NAME("Basement Key"),
@@ -16197,52 +16198,155 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_QuestionMark,
     },
 
-    // [ITEM_ROOM_PASS] =
-    // {
-    //     .name = ITEM_NAME("Room Pass"),
-    //     .pluralName = ITEM_PLURAL_NAME("Room Passes"),
-    //     .price = 0,
-    //     .description = COMPOUND_STRING(
-    //         "A pass for the \n"
-    //         "Ryukyu Hotel"),
-    //     .importance = 1,
-    //     .pocket = POCKET_KEY_ITEMS,
-    //     .type = ITEM_USE_BAG_MENU,
-    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    //     .iconPic = gItemIcon_QuestionMark,
-    //     .iconPalette = gItemIconPalette_QuestionMark,
-    // },
+    [ITEM_BATTLE_PASS] =
+    {
+        .name = ITEM_NAME("Battle Pass"),
+        .pluralName = ITEM_PLURAL_NAME("Battle Passes"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "The pass required\n"
+            "for entering the\n"
+            "Kanto Battle Club."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
 
-    // [ITEM_TRI_WING] =
-    // {
-    //     .name = ITEM_NAME("Tri-Wing"),
-    //     .price = 0,
-    //     .description = COMPOUND_STRING(
-    //         "A blue, red, and\n"
-    //         "yellow wing."),
-    //     .importance = 1,
-    //     .pocket = POCKET_KEY_ITEMS,
-    //     .type = ITEM_USE_BAG_MENU,
-    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    //     .iconPic = gItemIcon_QuestionMark,
-    //     .iconPalette = gItemIconPalette_QuestionMark,
-    // },
+    [ITEM_DRAGON_ORB] =
+    {
+        .name = ITEM_NAME("Dragon Orb"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A mystical orb\n"
+            "obtained inside\n"
+            "the Dragon's Maw."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
 
-    // [ITEM_MYSTERY_EGG] =
-    // {
-    //     .name = ITEM_NAME("Mystery Egg"),
-    //     .price = 0,
-    //     .description = COMPOUND_STRING(
-    //         "A mysterious egg\n"
-    //         "obtained from Mr.\n"
-    //         "Pokémon."),
-    //     .importance = 1,
-    //     .pocket = POCKET_KEY_ITEMS,
-    //     .type = ITEM_USE_BAG_MENU,
-    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    //     .iconPic = gItemIcon_QuestionMark,
-    //     .iconPalette = gItemIconPalette_QuestionMark,
-    // },
+    [ITEM_FUEL_LINE] =
+    {
+        .name = ITEM_NAME("Fuel Line"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A new fuel line to\n"
+            "replace the damaged\n"
+            "one on S.S. Aqua."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SHIP_KEY] =
+    {
+        .name = ITEM_NAME("Ship Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "The key to the\n"
+            "Captain's cabin in\n"
+            "Team Rocket's Ship."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    // TODO: implement functionality:
+    // it's like being on ice tiles always.
+    [ITEM_SKATEBOARD] =
+    {
+        .name = ITEM_NAME("Skateboard"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A skateboard that\n"
+            "can be ridden in\n"
+            "many locations."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_Bike,
+        .secondaryId = SKATEBOARD,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SLOWPOKE_TAIL] =
+    {
+        .name = ITEM_NAME("Slowpoke Tail"),
+        .price = 9800,
+        .description = COMPOUND_STRING(
+            "A very tasty tail of\n"
+            "something. It sells\n"
+            "for a high price."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_SQUIRT_BOTTLE] =
+    {
+        .name = ITEM_NAME("Squirt Bottle"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A bottle used for\n"
+            "watering Berries\n"
+            "and plants."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_WailmerPail,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    // TODO: check if the description is accurate to the game.
+    [ITEM_ROOM_PASS] =
+    {
+        .name = ITEM_NAME("Room Pass"),
+        .pluralName = ITEM_PLURAL_NAME("Room Passes"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A pass required for\n"
+            "entering a room in\n"
+            "the Ryukyu Hotel."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_TRI_WING] =
+    {
+        .name = ITEM_NAME("Tri-Wing"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A mysterious wing\n"
+            "colored with blue,\n"
+            "red, and yellow."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
 
 };
 
