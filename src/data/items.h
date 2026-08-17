@@ -16167,20 +16167,35 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_QuestionMark,
     },
 
-    // [ITEM_POISON_STONE] =
-    // {
-    //     .name = ITEM_NAME("Poison Stone"),
-    //     .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-    //     .description = sEvolutionStoneDesc,
-    //     .pocket = POCKET_ITEMS,
-    //     .sortType = ITEM_TYPE_EVOLUTION_STONE,
-    //     .type = ITEM_USE_PARTY_MENU,
-    //     .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
-    //     .effect = gItemEffect_EvoItem,
-    //     .flingPower = 30,
-    //     .iconPic = gItemIcon_QuestionMark,
-    //     .iconPalette = gItemIconPalette_QuestionMark,
-    // },
+    [ITEM_HEART_STONE] =
+    {
+        .name = ITEM_NAME("Heart Stone"),
+        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
+        .description = sEvolutionStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_EVOLUTION_STONE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_POISON_STONE] =
+    {
+        .name = ITEM_NAME("Poison Stone"),
+        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
+        .description = sEvolutionStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_EVOLUTION_STONE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
 
     // [ITEM_ROOM_PASS] =
     // {
