@@ -16121,7 +16121,45 @@ const struct ItemInfo gItemsInfo[] =
             "raises Evasion in\n"
             "a battle."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_STAT_BOOST_HELD_ITEM,
+        .sortType = ITEM_TYPE_CATCH_RATE_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_LONG_TONGUE] =
+    {
+        .name = ITEM_NAME("Long Tongue"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_CATCH_RATE_BOOST,
+        .holdEffectParam = 50, // 50% boost in catch rate
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "makes catching wild\n"
+            "Pokémon easier."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_CATCH_RATE_BOOST_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_LONG_VINE] =
+    {
+        .name = ITEM_NAME("Long Vine"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_CATCH_RATE_BOOST,
+        .holdEffectParam = 50, // 50% boost catch rate
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "makes catching wild\n"
+            "Pokémon easier."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_CATCH_RATE_BOOST_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,

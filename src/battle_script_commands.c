@@ -9936,6 +9936,12 @@ static u32 ComputeCaptureOdds(u32 wildMonBattler, u32 playerBattler)
     if (battleMon->status1 & STATUS1_CAN_MOVE)
         odds = odds * 15 / 10;
 
+    if (GetBattlerHoldEffect(playerBattler) == HOLD_EFFECT_CATCH_RATE_BOOST)
+    {
+        u8 param = GetItemHoldEffectParam(gBattleMons[playerBattler].item);
+        odds = odds * (100 + param) / 100;
+    }
+
     return odds;
 }
 
